@@ -2,6 +2,6 @@
 <div>
   <p>投稿ユーザー画像：<%= image_tag 'no_image.jpg' %></p>
   <p>Title：<%= link_to book.title, book_path(book.id) %></p>
-  <p>Opinion：<%= book.opinion %></p>
+  <p>Opinion：<%= book.body %></p>
 </div>
 <% end %>

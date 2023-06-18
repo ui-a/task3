@@ -6,7 +6,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/192d4374d3.js" crossorigin="anonymous"></script>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -15,6 +16,9 @@
       <% if user_signed_in? %>
         <li>
           <%= link_to 'new', new_book_path %>
+        </li>
+        <li>
+          <%= link_to 'mypage', user_path(current_user.id)%>
         </li>
         <li>
           <%= link_to "Log out", destroy_user_session_path, method: :delete %>
