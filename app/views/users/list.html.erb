@@ -2,19 +2,10 @@
 <div class="container">
 
   <div class="row">
+<%= render 'error', books: @books %>
 
     <div class="col-lg-4">
-<div>
-  <h2>User info</h2>
-  <%= image_tag @user.get_profile_image(100, 100) %>
-  <p>name:<%= @user.name %></p>
-  <p>introduction:<%= @user.introduction %></p>
-  <% if @user == current_user %>
-  <p><%= link_to "プロフィール編集", edit_user_path(@user) %>
-    <i class="fa-solid fa-user-gear" style="color: #6c757d;"></i></p>
-  <% end %>
-</div>
-
+      <%= render 'users/user', users: @users %>
 
 
 
@@ -38,6 +29,8 @@
   <% end %>
     </div>
 
+
+
     <div class="col-lg-8">
 
 
@@ -50,11 +43,11 @@
     <th>Title</th>
     <th>Opinion</th>
   </tr>
-  <% @books.each do |book| %>
+  <% @users.each do |user| %>
   <tr>
-    <td><%= image_tag book.user.get_profile_image(100, 100) %></td>
-    <td><%= link_to book.title, book_path(book.id) %></td>
-    <td><%= book.body %></td>
+    <td><%= image_tag current_user.get_profile_image(100, 100) %></td>
+    <td><%= current_user.name %></td>
+    <td><%= link_to "Show", user_params %></td>
   </tr>
   <% end %>
 </div>
