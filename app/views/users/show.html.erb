@@ -2,31 +2,43 @@
   <%= flash[:notice] %>
 </div>
 
-
 <div class="container">
 <div class="row mt-3">
 
 <!--ユーザー-->
     <div class="col-md-3">
-<table>
+
   <h2>User info</h2>
+  <table class="table">
   <%= image_tag @user.get_profile_image(100, 100) %>
-  <p>name:<%= @user.name %></p>
-  <p>introduction:<%= @user.introduction %></p>
+  <tr>
+  <th>name</th>
+  <th><%= @user.name %></th>
+  </tr>
+  <tr>
+  <th>introduction</th>
+  <th><%= @user.introduction %></th>
+  </tr>
+  </table>
+
   <% if @user == current_user %>
-  <p><a class="btn btn-outline-secondary" href="/users/<%= current_user.id %>/edit">
-    <i class="fa-solid fa-user-gear"></i></a></p>
+    <%= link_to edit_user_path(@user), method: :get do%>
+      <a href="/users/<%= current_user.id %>/edit">
+        <button type="button" class="btn btn-outline-secondary btn-block">
+        <i class="fa-solid fa-user-gear"></i></button></a>
+    <% end %>
   <% end %>
-</table>
 
 
 
 <!--新規投稿-->
-<%= render 'books/new', books: @books %>
+
+  <%= render 'books/new', books: @books %>
+
 </div>
 
 <!--ユーザー投稿一覧-->
-    <div class="col-md-8 ml-auto">
+    <div class="col-md-8 offset-md-1">
 
 <h2>Books</h2>
 

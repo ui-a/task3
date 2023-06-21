@@ -8,23 +8,27 @@
 
 
     <div class="col-md-3">
-  <h2>User info</h2>
-  <%= image_tag @book.user.get_profile_image(100, 100) %>
+
+<h2>User info</h2>
   <table class="table">
+  <%= image_tag @book.user.get_profile_image(100, 100) %>
   <tr>
-    <td>name</td>
-    <td><%= @book.user.name %></td>
+  <th>name</th>
+  <th><%= @book.user.name %></th>
   </tr>
   <tr>
-    <td>introduction</td>
-    <td><%= @book.user.introduction %></td>
+  <th>introduction</th>
+  <th><%= @book.user.introduction %></th>
   </tr>
-    <% if @user == current_user %>
-    <%= link_to "編集", edit_user_path(@user), class: 'nav-link btn btn-outline-secondary' do %>
-              <i class="fa-solid fa-user-gear"></i>
-              <% end %>
+  </table>
+
+  <% if @user == current_user %>
+    <%= link_to edit_user_path(@user), method: :get do%>
+      <a href="/users/<%= current_user.id %>/edit">
+        <button type="button" class="btn btn-outline-secondary btn-block">
+        <i class="fa-solid fa-user-gear"></i></button></a>
     <% end %>
-</table>
+  <% end %>
 
 
 <!--新規投稿-->
@@ -32,7 +36,7 @@
     </div>
 
 
-    <div class="col-md-8 ml-auto">
+    <div class="col-md-8 offset-md-1">
 
 
 <table class="table">

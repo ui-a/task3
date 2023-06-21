@@ -7,10 +7,10 @@
   <div class="row">
 
 <!--ユーザー-->
-    <div class="center-block">
-    <div class="col-md-10 mx-auto">
+<div class="d-flex flex-column mx-auto">
+    <div class="col-md-12 mt-3 mb-5">
 
-<h1>Wlecome to <i class="fa-solid fa-book"></i><strong>Bookers!!</strong></h1>
+<h1>wlecome to <i class="fa-solid fa-book"></i><strong>Bookers</strong>!!</h1>
 
 <p>In <i class="fa-solid fa-book"></i>Bookers,<p>
 
@@ -21,11 +21,13 @@
 
 <!--Login-->
 
- <%= link_to "Log in", new_user_session_path, class: 'nav-link text-light btn btn-info' %>
-<br>
-
+<div class="col-11 mx-auto mt-2 mb-3">
+ <%= link_to "Log in", new_user_session_path, class: 'btn btn-info btn-sm btn-block' %>
+</div>
 <!--signup-->
-
-<%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-light btn btn-success' %>
-
+<div class="col-11 mx-auto">
+<%= link_to "Sign up", new_user_registration_path, class: 'btn btn-success btn-sm btn-block' %>
+</div>
+</div>
+</div>
 </div>

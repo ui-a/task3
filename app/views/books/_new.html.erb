@@ -2,9 +2,9 @@
 <h2>New Book</h2>
 <%= form_with model: Book.new do |f| %>
     Title<br>
-    <p><%= f.text_field :title %></p>
+    <p><%= f.text_field :title, class: "form-control" %></p>
     Opinion<br>
-    <p><%= f.text_area :body %></p>
+    <p><%= f.text_area :body, class: "form-control" %></p>
   <%= f.submit 'Create Book', class: 'btn btn-success' %>
 <% end %>
 </div>
