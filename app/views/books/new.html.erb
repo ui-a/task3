@@ -3,7 +3,7 @@
 </div>
 
 
-<h1>New Book</h1>
+<h2>New Book</h2>
 
 <% if @book.errors.any? %>
   <%= @book.errors.count %>error prohibited this obj from being saved:
@@ -14,10 +14,12 @@
   </ul>
 <% end %>
 
-  <%= form_with model: @book do |f| %>
-    <p>Title</p>
-      <%= f.text_field :title %>
-    <p>Opinion</p>
-      <%= f.text_area :body %>
-    <%= f.submit 'Create Book' %>
-  <% end %>
+<div>
+<%= form_with model: @book do |f| %>
+    Title<br>
+    <p><%= f.text_field :title %></p>
+    Opinion<br>
+    <p><%= f.text_area :body %></p>
+  <%= f.submit 'Create Book', class: 'btn btn-success' %>
+<% end %>
+</div>

@@ -1,4 +1,16 @@
-<h1>Wlecome to <i class="fa-solid fa-book"></i><strong>Bookers!</strong></h1>
+<div>
+  <%= flash[:notice] %>
+</div>
+
+
+<div class="container">
+  <div class="row">
+
+<!--ユーザー-->
+    <div class="center-block">
+    <div class="col-md-10 mx-auto">
+
+<h1>Wlecome to <i class="fa-solid fa-book"></i><strong>Bookers!!</strong></h1>
 
 <p>In <i class="fa-solid fa-book"></i>Bookers,<p>
 
@@ -6,6 +18,14 @@
 
 <p>about various books!</p>
 
+
 <!--Login-->
 
+ <%= link_to "Log in", new_user_session_path, class: 'nav-link text-light btn btn-info' %>
+<br>
+
 <!--signup-->
+
+<%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-light btn btn-success' %>
+
+</div>
